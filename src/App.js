@@ -1,12 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import { useTranslation } from "react-i18next";
-import chineseResource from './chinese.json';
+import chineseResource from './Translation/zh.json';
 
-function App() {
-  const { t, i18n } = useTranslation();
+
+function App() {  
+  const { t, i18n } = useTranslation(["common"]);
+  //const { t, i18n } = useTranslation(["uncommon"]);
+  //{t("welcome")} 
   const load = () => {
-    i18n.addResourceBundle("cn", "translation", chineseResource);
+    i18n.addResourceBundle("cn", "common", chineseResource);
   }
   
   return (
@@ -19,14 +22,17 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {t("welcome")}
+          {t("welcome1")}  
+        
         </a>
       </header>
-      <div>
-        <button onClick={() => i18n.changeLanguage("fr")}>French</button>
-        <button onClick={() => i18n.changeLanguage("en")}>English</button>
-        <button onClick={() => i18n.changeLanguage("cn")}>Chinese</button>
-        <button onClick={() => load()}>Load Chinese</button>
+      
+      <div>     
+        
+        <button onClick={() => i18n.changeLanguage("fr")}>{t("button1")}</button>
+        <button onClick={() => i18n.changeLanguage("en")}>{t("button2")}</button>
+        <button onClick={() => i18n.changeLanguage("cn")}>{t("button3")}</button>
+        <button onClick={() => load()}>{t("button4")}</button>
 
       </div>
     </div>
