@@ -9,7 +9,7 @@ function App() {
   //const { t, i18n } = useTranslation(["uncommon"]);
   //{t("welcome")} 
   const load = () => {
-    i18n.addResourceBundle("cn", "common", chineseResource);
+    i18n.addResourceBundle("zh", "common", chineseResource);
   }
   
   return (
@@ -31,7 +31,7 @@ function App() {
         
         <button onClick={() => i18n.changeLanguage("fr")}>{t("button1")}</button>
         <button onClick={() => i18n.changeLanguage("en")}>{t("button2")}</button>
-        <button onClick={() => i18n.changeLanguage("cn")}>{t("button3")}</button>
+        <button onClick={() => i18n.changeLanguage("zh")}>{t("button3")}</button>
         <button onClick={() => load()}>{t("button4")}</button>
 
       </div>
