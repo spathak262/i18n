@@ -17,7 +17,7 @@ def merge(folder):
             jsonData = json.load(inFile)
             checkForDuplicates(jsonData.keys(), allKeys)
             allKeys.append(jsonData.keys())
-            result = dict(result.items() + jsonData.items())
+            result = dict(result.items() | jsonData.items())
 
     with open('build/locales/' + folder + '/translation.json', 'a') as output_file:
         json.dump(result, output_file)
