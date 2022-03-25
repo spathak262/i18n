@@ -13,7 +13,7 @@ def merge(folder):
     result = {}
     allKeys = []
     for fileName in os.listdir("./src/resources/" + folder):
-        with open("./src/resources.% s/% s"%(folder, fileName), r) as inFile:
+        with open("./src/resources.% s/% s"%(folder, fileName), "r") as inFile:
             jsonData = json.load(inFile)
             checkForDuplicates(jsonData.keys(), allKeys)
             allKeys.append(jsonData.keys())
