@@ -5,8 +5,6 @@ def getFolders():
     return os.listdir("./src/resources")
 
 def checkForDuplicates(keys, allKeys):
-    print(keys)
-    print(allKeys)
     for key in keys:
         if key in allKeys:
             raise Exception("Error occured. key ' %s ' already exists" % (key) )
