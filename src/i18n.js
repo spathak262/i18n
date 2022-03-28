@@ -11,11 +11,7 @@ i18n
 .use(initReactI18next)
 .init({ 
     detection: {order: ['navigator','querystring', 'cookie', 'localStorage', 'sessionStorage', 'htmlTag', 'path', 'subdomain']},  
-    fallbackLng: "en",
-    ns: ["common","uncommon"],
-    backend: {
-        loadPath:"/locales/{{ns}}/{{lng}}.json"
-    },
+    fallbackLng: "en",    
     debug: true
 })
 

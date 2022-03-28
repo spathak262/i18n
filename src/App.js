@@ -5,11 +5,9 @@ import chineseResource from './Translation/zh.json';
 
 
 function App() {  
-  const { t, i18n } = useTranslation(["common"]);
-  //const { t, i18n } = useTranslation(["uncommon"]);
-  //{t("welcome")} 
+  const { t, i18n } = useTranslation();  
   const load = () => {
-    i18n.addResourceBundle("zh", "common", chineseResource);
+    i18n.addResourceBundle("zh", "translation", chineseResource);
   }
   
   return (
