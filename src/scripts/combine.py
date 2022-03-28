@@ -5,6 +5,8 @@ def getFolders():
     return os.listdir("./src/resources")
 
 def checkForDuplicates(keys, allKeys):
+    print(keys)
+    print(allKeys)
     for key in keys:
         if key in allKeys:
             raise Exception("Error occured. key ' %s ' already exists" % (key) )
@@ -16,7 +18,7 @@ def merge(folder):
         with open("./src/resources/% s/% s"%(folder, fileName), "r") as inFile:
             jsonData = json.load(inFile)
             checkForDuplicates(jsonData.keys(), allKeys)
-            allKeys.append(jsonData.keys())
+            allKeys.extend(jsonData.keys())
             result = dict(result.items() | jsonData.items())
 
     with open('build/locales/' + folder + '/translation.json', 'a') as output_file:
